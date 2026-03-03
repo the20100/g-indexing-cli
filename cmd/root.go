@@ -64,7 +64,7 @@ func init() {
 	rootCmd.PersistentFlags().BoolVar(&prettyFlag, "pretty", false, "Force pretty-printed JSON output (implies --json)")
 
 	rootCmd.PersistentPreRunE = func(cmd *cobra.Command, args []string) error {
-		if isAuthCommand(cmd) || cmd.Name() == "info" {
+		if isAuthCommand(cmd) || cmd.Name() == "info" || cmd.Name() == "update" {
 			return nil
 		}
 		return initService(cmd.Context())
