@@ -54,7 +54,12 @@ export GOOGLE_APPLICATION_CREDENTIALS=/path/to/sa.json
 g-indexing auth setup --credentials /path/to/credentials.json
 # or
 g-indexing auth setup --client-id <id> --client-secret <secret>
+
+# On a remote server (VPS) where no browser is available:
+g-indexing auth setup --credentials /path/to/credentials.json --no-browser
 ```
+
+With `--no-browser`: the CLI prints the OAuth URL. Open it in a local browser, authorize, then copy the full redirect URL from the address bar and paste it into the terminal (the page will fail to load — that's expected).
 
 Config stored at:
 - macOS: `~/Library/Application Support/g-indexing/config.json`
